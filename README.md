@@ -1,54 +1,57 @@
-# React + TypeScript + Vite
+# Junior Front-end Engineer Assignment - May 2025
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+-   Copyright (c) River Flow Solutions, Jsc. 2025. All rights reserved.
+-   We only use the submissions for candidates evaluation.
 
-Currently, two official plugins are available:
+## Assignment List
 
--   [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
--   [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+-   Layout Implementation (CSS, HTML)
+-   JSON Forms rendering component
+-   Paginated List component
 
-## Expanding the ESLint configuration
+## General Requirements
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+-   Use either [ShaDN](https://ui.shadcn.com/), [TailwindCSS](https://tailwindcss.com/) for UI layout
+-   Use either of ReactJS, VueJS, Svelte-Kit for the Main Framework.
+-   Use either of the following libaries for State Management:
+    -   [Redux-toolkit](https://redux-toolkit.js.org/)
+    -   [Nanostores](https://github.com/nanostores/nanostores)
+-   No limit of using AI / help as long as the candidate can understand and explain the related technical details.
 
-```js
-export default tseslint.config({
-    extends: [
-        // Remove ...tseslint.configs.recommended and replace with this
-        ...tseslint.configs.recommendedTypeChecked,
-        // Alternatively, use this for stricter rules
-        ...tseslint.configs.strictTypeChecked,
-        // Optionally, add this for stylistic rules
-        ...tseslint.configs.stylisticTypeChecked,
-    ],
-    languageOptions: {
-        // other options...
-        parserOptions: {
-            project: ['./tsconfig.node.json', './tsconfig.app.json'],
-            tsconfigRootDir: import.meta.dirname,
-        },
-    },
-});
-```
+## Instructions
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+Candidate must fork this repository to a public repo under their name for submission.
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x';
-import reactDom from 'eslint-plugin-react-dom';
+Each candidate must implement at least 2 assignments out of 3 from the list.
 
-export default tseslint.config({
-    plugins: {
-        // Add the react-x and react-dom plugins
-        'react-x': reactX,
-        'react-dom': reactDom,
-    },
-    rules: {
-        // other rules...
-        // Enable its recommended typescript rules
-        ...reactX.configs['recommended-typescript'].rules,
-        ...reactDom.configs.recommended.rules,
-    },
-});
-```
+In case of technical difficulties, candidate may describe how the problem should be resolved in NARRATION.md. However, executable code is always preferrable.
+
+## A1: Layout Implementation
+
+-   Implement 3 Figma Screens into CSS, HTML using TailwindCSS / ShaDN: [Design](https://www.figma.com/design/LM6tzSajnXW4EemOCoKfAI/Recruitment-05--2025?node-id=0-1&p=f)
+
+## A2: JSON form rendering components
+
+-   Implement a component that receive [JSON Schemas](https://json-schema.org/) input (via a text box) and render HTML forms.
+-   Implement a custom input component (embedded within the JSON schema renderer) to input new Vietnamese address field (output data is a single text field) with following input layout:
+
+    ```
+    [Tỉnh / Thành phố]
+    [Phường / Xã]
+    [Đường và số nhà]
+
+    NOTE: danh sách phường xã cần được cập nhật theo Tỉnh / Thành phố được lựa chọn (có thể dùng data sample, không cần chính xác với thực tế)
+    ```
+
+-   Match the form looks and feel with the UI framework of choice (ShaDN / TailwindCSS).
+-   Form content is saved to the state store and persist across page refreshes.
+-   There should be a reset action to reset the data in the store.
+
+## A3: Paginated component
+
+Implement a component that render the [data](https://github.com/datablist/sample-csv-files?tab=readme-ov-file) as paginated tables.
+
+-   Data can be converted into JSON before use.
+-   Allow sorting and change sorting order by clicking the table header.
+-   Allow filter by each columns values.
+-   The current page & active filter must be saved to the state store and persist across page refreshes
