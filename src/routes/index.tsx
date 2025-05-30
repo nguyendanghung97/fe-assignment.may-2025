@@ -10,6 +10,7 @@ const publicRoutes = [
             { path: configs.routes.inquiries, component: React.lazy(() => import('@/pages/inquiries')) },
             { path: configs.routes.estimator, component: React.lazy(() => import('@/pages/estimator')) },
             { path: configs.routes.projects, component: React.lazy(() => import('@/pages/projects')) },
+            { path: configs.routes.ticket, component: React.lazy(() => import('@/pages/ticket')) },
             { path: configs.routes.administrations, component: React.lazy(() => import('@/pages/administrations')) },
             { path: configs.routes.documentation, component: React.lazy(() => import('@/pages/documentation')) },
         ],

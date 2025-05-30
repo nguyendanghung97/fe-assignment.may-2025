@@ -38,7 +38,7 @@ const dataSideBar = {
         },
         {
             title: 'Projects',
-            url: configs.routes.projects,
+            url: configs.routes.ticket,
             icon: <ProjectsIcon />,
         },
     ],

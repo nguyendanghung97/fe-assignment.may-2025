@@ -4,6 +4,7 @@ const routes: Record<string, any> = {
     estimator: '/estimator',
     inquiries: '/inquiries',
     projects: '/projects',
+    ticket: '/projects/ticket-detail',
     administrations: '/administrations',
     documentation: 'documentation',
     admin: '/admin',

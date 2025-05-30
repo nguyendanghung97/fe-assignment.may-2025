@@ -21,7 +21,7 @@ const AppSidebar = ({ ...props }) => {
     // onClick={() => setOpen(!open)}
 
     return (
-        <Sidebar className="oke" collapsible="icon" {...props}>
+        <Sidebar collapsible="icon" {...props}>
             <SidebarHeader className="pt-6 px-4">
                 <SidebarMenu>
                     <SidebarMenuItem className="flex items-center gap-4">

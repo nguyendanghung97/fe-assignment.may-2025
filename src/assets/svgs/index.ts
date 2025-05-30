@@ -7,6 +7,13 @@ import ProjectsIcon from './projects.svg';
 import EstimatorICon from './estimator.svg';
 import InquiriesIcon from './inquiries.svg';
 import RedirectIcon from './redirect.svg';
+import ChevronRightIcon from './chevron-right.svg';
+import EBookIcon from './ebook.svg';
+import ChevronDownIcon from './chevron-down.svg';
+import CircleIcon from './circle.svg';
+import CircelFillIcon from './circle-fill.svg';
+import ClockIcon from './clock.svg';
+import ArrowUpIcon from './arrow-up.svg';
 
 export {
     LogoIcon,
@@ -18,4 +25,11 @@ export {
     EstimatorICon,
     InquiriesIcon,
     RedirectIcon,
+    ChevronRightIcon,
+    ChevronDownIcon,
+    EBookIcon,
+    CircleIcon,
+    CircelFillIcon,
+    ClockIcon,
+    ArrowUpIcon,
 };

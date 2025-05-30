@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,100..700;1,100..700&display=swap');
 @import 'tailwindcss';
-@import "tw-animate-css";
+@import 'tw-animate-css';
 
 @custom-variant dark (&:is(.dark *));
 
@@ -48,17 +48,8 @@
 }
 
 body {
-    @apply font-[Inter];
-}
-
-@layer utilities {
-    .scroll-hide {
-        scrollbar-width: none; /* Firefox */
-        -ms-overflow-style: none; /* IE and Edge */
-    }
-    .scroll-hide::-webkit-scrollbar {
-        display: none; /* Chrome, Safari, Opera */
-    }
+    @apply font-[Inter] text-[var(--text-color)];
+    /* color: var(--text-color); */
 }
 
 @theme inline {
@@ -134,10 +125,33 @@ body {
 }
 
 @layer base {
-  * {
-    @apply border-border outline-ring/50;
+    * {
+        @apply border-border outline-ring/50;
     }
-  body {
-    @apply bg-background text-foreground;
+    body {
+        @apply bg-background text-foreground;
     }
+}
+
+@layer utilities {
+    .scroll-hide {
+        scrollbar-width: none; /* Firefox */
+        -ms-overflow-style: none; /* IE and Edge */
+    }
+    .scroll-hide::-webkit-scrollbar {
+        display: none; /* Chrome, Safari, Opera */
+    }
+}
+
+/* Custom scroll */
+html *::-webkit-scrollbar {
+    width: 8px;
+}
+
+html *::-webkit-scrollbar-thumb {
+    @apply rounded bg-[#D9D9D9];
+}
+
+html *::-webkit-scrollbar-track {
+    @apply bg-transparent;
 }
