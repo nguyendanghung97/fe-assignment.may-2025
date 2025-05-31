@@ -14,6 +14,10 @@ import CircleIcon from './circle.svg';
 import CircelFillIcon from './circle-fill.svg';
 import ClockIcon from './clock.svg';
 import ArrowUpIcon from './arrow-up.svg';
+import ListIcon from './list.svg';
+import PackageIcon from './package.svg';
+import ArrowRightICon from './arrow-right.svg';
+import SearchIcon from './search.svg';
 
 export {
     LogoIcon,
@@ -32,4 +36,8 @@ export {
     CircelFillIcon,
     ClockIcon,
     ArrowUpIcon,
+    ListIcon,
+    PackageIcon,
+    ArrowRightICon,
+    SearchIcon,
 };

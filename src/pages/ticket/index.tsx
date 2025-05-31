@@ -40,7 +40,7 @@ const propsData = [
 
 const Page = () => {
     return (
-        <div className="pt-2 md:pt-5 pl-6">
+        <>
             <AppBreadcrumd data={breadcrumdData} />
             <Separator />
             <div className="flex justify-between">
@@ -141,7 +141,7 @@ const Page = () => {
                     </ul>
                 </div>
             </div>
-        </div>
+        </>
     );
 };
 

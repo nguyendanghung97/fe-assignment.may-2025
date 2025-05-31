@@ -9,6 +9,7 @@ const publicRoutes = [
             { path: configs.routes.overview, component: React.lazy(() => import('@/pages/overview')) },
             { path: configs.routes.inquiries, component: React.lazy(() => import('@/pages/inquiries')) },
             { path: configs.routes.estimator, component: React.lazy(() => import('@/pages/estimator')) },
+            { path: configs.routes.work, component: React.lazy(() => import('@/pages/work')) },
             { path: configs.routes.projects, component: React.lazy(() => import('@/pages/projects')) },
             { path: configs.routes.ticket, component: React.lazy(() => import('@/pages/ticket')) },
             { path: configs.routes.administrations, component: React.lazy(() => import('@/pages/administrations')) },

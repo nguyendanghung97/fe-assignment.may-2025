@@ -14,9 +14,11 @@ const Layout = () => {
             }
         >
             <AppSidebar />
-            <main className="flex-1 relative">
+            <main className="flex-1 pt-2 md:pt-5 pl-5 pb-4 pr-4">
                 <SidebarTrigger className="fixed right-0 top-0 md:hidden cursor-pointer" />
-                <Outlet />
+                <div className="pl-0.5">
+                    <Outlet />
+                </div>
             </main>
         </SidebarProvider>
     );

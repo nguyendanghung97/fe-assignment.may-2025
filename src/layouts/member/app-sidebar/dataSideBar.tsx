@@ -33,7 +33,7 @@ const dataSideBar = {
         },
         {
             title: 'Estimator',
-            url: configs.routes.estimator,
+            url: configs.routes.work,
             icon: <EstimatorICon />,
         },
         {
