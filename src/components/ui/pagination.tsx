@@ -73,7 +73,7 @@ function PaginationNext({ className, ...props }: React.ComponentProps<typeof Pag
             {...props}
         >
             <span className="hidden sm:block">Next</span>
-            <ArrowRightICon />
+            <ArrowRightICon className="p-0.5" />
         </PaginationLink>
     );
 }

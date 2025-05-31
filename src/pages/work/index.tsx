@@ -139,62 +139,63 @@ const Page = () => {
                             <SearchIcon className="absolute left-4 h-full" />
                             <Input className="h-8 px-9" />
                         </div>
-                        <div className="pt-4 grid lg:grid-cols-2 xl:grid-cols-3 gap-x-6 gap-y-4">
-                            {activeSubTab === tabs[0].subTabs[0].value ? (
-                                [...Array(9)].map((_, index) => (
-                                    <Card
-                                        key={index}
-                                        className="max-w-[296px] p-3 rounded-sm shadow-none gap-4 min-w-fit"
-                                    >
-                                        <CardHeader className="flex items-center justify-between">
-                                            <CardTitle className="text-[18px]">Work package {index + 1}</CardTitle>
-                                            <ChevronRightIcon className="text-sm" />
-                                        </CardHeader>
-                                        <CardContent className="flex flex-col gap-4">
-                                            <CardDescription className="line-clamp-2">
-                                                Define system structure, technology stack, and integration flow.
-                                                Includes do...
-                                            </CardDescription>
-                                            <div className="flex gap-1.5">
-                                                <Button
-                                                    variant="secondary"
-                                                    className="w-6 h-6 rounded-none bg-[#E2F5F9] hover:text-[var(--primary-color)] border"
-                                                >
-                                                    <ChevronRightIcon />
-                                                </Button>
-                                                <Button
-                                                    variant="secondary"
-                                                    className="w-6 h-6 rounded-none bg-[#E2F5F9] border"
-                                                >
-                                                    <ChevronRightIcon />
-                                                </Button>
-                                            </div>
-                                        </CardContent>
-                                        <CardFooter className="flex justify-between">
-                                            <CardAction className="flex">
-                                                <Button
-                                                    variant="secondary"
-                                                    className="h-9 text-[var(--primary-color)] bg-[#F3F4F6] mr-4"
-                                                >
-                                                    View Detail
-                                                </Button>
-                                            </CardAction>
-                                            <PackageIcon />
-                                        </CardFooter>
-                                    </Card>
-                                ))
-                            ) : (
-                                <p className="text-gray-500">Please select a sub-tab above.</p>
-                            )}
-                        </div>
-
-                        <Pagination className="mt-36 justify-end">
-                            <PaginationContent>
-                                <PaginationItem>
-                                    <PaginationNext className="text-[var(--primary-color)] gap-2.5 border border-[var(--primary-color)] hover:text-[var(--primary-color)]" />
-                                </PaginationItem>
-                            </PaginationContent>
-                        </Pagination>
+                        {activeSubTab === tabs[0].subTabs[0].value ? (
+                            <>
+                                <div className="pt-4 grid lg:grid-cols-2 xl:grid-cols-3 gap-x-6 gap-y-4">
+                                    {[...Array(9)].map((_, index) => (
+                                        <Card
+                                            key={index}
+                                            className="max-w-[296px] p-3 rounded-sm shadow-none gap-4 min-w-fit"
+                                        >
+                                            <CardHeader className="flex items-center justify-between">
+                                                <CardTitle className="text-[18px]">Work package {index + 1}</CardTitle>
+                                                <ChevronRightIcon className="text-sm" />
+                                            </CardHeader>
+                                            <CardContent className="flex flex-col gap-4">
+                                                <CardDescription className="line-clamp-2">
+                                                    Define system structure, technology stack, and integration flow.
+                                                    Includes do...
+                                                </CardDescription>
+                                                <div className="flex gap-1.5">
+                                                    <Button
+                                                        variant="secondary"
+                                                        className="w-6 h-6 rounded-none bg-[#E2F5F9] hover:text-[var(--primary-color)] border"
+                                                    >
+                                                        <ChevronRightIcon />
+                                                    </Button>
+                                                    <Button
+                                                        variant="secondary"
+                                                        className="w-6 h-6 rounded-none bg-[#E2F5F9] border"
+                                                    >
+                                                        <ChevronRightIcon />
+                                                    </Button>
+                                                </div>
+                                            </CardContent>
+                                            <CardFooter className="flex justify-between">
+                                                <CardAction className="flex">
+                                                    <Button
+                                                        variant="secondary"
+                                                        className="h-9 text-[var(--primary-color)] bg-[#F3F4F6] mr-4"
+                                                    >
+                                                        View Detail
+                                                    </Button>
+                                                </CardAction>
+                                                <PackageIcon />
+                                            </CardFooter>
+                                        </Card>
+                                    ))}
+                                </div>
+                                <Pagination className="mt-36 justify-end">
+                                    <PaginationContent>
+                                        <PaginationItem>
+                                            <PaginationNext className="text-[var(--primary-color)] gap-2 border border-[var(--primary-color)] hover:text-[var(--primary-color)]" />
+                                        </PaginationItem>
+                                    </PaginationContent>
+                                </Pagination>
+                            </>
+                        ) : (
+                            <p className="text-gray-500">Please select a sub-tab above.</p>
+                        )}
                     </section>
                 </div>
             </div>
