@@ -1,11 +1,14 @@
-import React from 'react';
 import { Outlet } from 'react-router-dom';
+import Header from './Header';
 
 const Layout = () => {
     return (
-        <main>
-            <Outlet />
-        </main>
+        <div className="w-fit">
+            <Header />
+            <main className="w-fit">
+                <Outlet />
+            </main>
+        </div>
     );
 };
 

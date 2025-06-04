@@ -13,10 +13,9 @@ import {
 import { Input } from '@/components/ui/input';
 import { Pagination, PaginationContent, PaginationItem, PaginationNext } from '@/components/ui/pagination';
 import { Separator } from '@/components/ui/separator';
-import { Tabs } from '@/components/ui/tabs';
+import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import configs from '@/configs';
 import { cn } from '@/lib/utils';
-import { TabsContent, TabsList, TabsTrigger } from '@radix-ui/react-tabs';
 import { useMemo, useState } from 'react';
 
 const dataBrc: IBreadcrumd[] = [
@@ -53,8 +52,8 @@ const Page = () => {
     return (
         <>
             <div className="flex justify-between">
-                <AppBreadcrumd data={dataBrc} />
-                <Button className="h-10 !px-4 bg-[var(--primary-color)] gap-2.5 rounded-4xl">
+                <AppBreadcrumd className="shrink-0" data={dataBrc} />
+                <Button className="hidden sm:flex h-10 !px-4 bg-[var(--primary-color)] gap-2.5 rounded-4xl">
                     <ListIcon />
                     View Summary
                 </Button>
@@ -63,8 +62,8 @@ const Page = () => {
             <Separator />
             <div className="pl-11">
                 <h3 className="pt-4 pb-8 text-xl font-medium leading-8 text-gray-800">Work Packages (WP)</h3>
-                <div className="flex">
-                    <section className="pr-2 max-w-52 min-h-screen">
+                <div className="sm:flex">
+                    <section className="pr-2 pb-5 sm:pb-0 max-w-52 sm:min-h-screen">
                         <div className="pr-3 h-full flex flex-col">
                             <Tabs
                                 value={activeTab}
@@ -139,7 +138,7 @@ const Page = () => {
                             </Button>
                         </div>
                     </section>
-                    <section className="pl-4 flex-1">
+                    <section className="sm:pl-4 flex-1">
                         <div className="relative">
                             <SearchIcon className="absolute left-4 h-full" />
                             <Input className="h-8 px-9" />

@@ -1,9 +1,9 @@
 import * as React from 'react';
-import { ChevronLeftIcon, MoreHorizontalIcon } from 'lucide-react';
 
 import { cn } from '@/lib/utils';
 import { Button, buttonVariants } from '@/components/ui/button';
-import { ArrowRightICon } from '@/assets/svgs';
+import { ChevronLeftIcon, ChevronRightIcon } from '@/assets/svgs';
+import { MoreHorizontalIcon } from 'lucide-react';
 
 function Pagination({ className, ...props }: React.ComponentProps<'nav'>) {
     return (
@@ -55,11 +55,10 @@ function PaginationPrevious({ className, ...props }: React.ComponentProps<typeof
         <PaginationLink
             aria-label="Go to previous page"
             size="default"
-            className={cn('gap-1 px-2.5 sm:pl-2.5', className)}
+            className={cn('gap-1 px-2.5 sm:pl-2.5 cursor-pointer', className)}
             {...props}
         >
-            <ChevronLeftIcon />
-            <span className="hidden sm:block">Previous</span>
+            <ChevronLeftIcon className="text-base" />
         </PaginationLink>
     );
 }
@@ -72,8 +71,7 @@ function PaginationNext({ className, ...props }: React.ComponentProps<typeof Pag
             className={cn('gap-1 px-2.5 sm:pr-2.5 cursor-pointer', className)}
             {...props}
         >
-            <span className="hidden sm:block">Next</span>
-            <ArrowRightICon className="p-0.5" />
+            <ChevronRightIcon className="text-base" />
         </PaginationLink>
     );
 }
