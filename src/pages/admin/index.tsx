@@ -70,6 +70,8 @@ const Page = () => {
                     variant="outline"
                     className="text-sm font-medium text-[#4A4B57] h-8"
                     onClick={() => {
+                        setColumnFilters([]);
+                        setSorting([]);
                         console.log('allVisibleUsers', allVisibleUsers);
                     }}
                 >
