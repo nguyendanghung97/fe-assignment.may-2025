@@ -10,6 +10,7 @@ import { ArrowUpDown } from 'lucide-react';
 import { toggleBasicSorting } from '@/utils/sort';
 import { ELoanTableColumnId, EUserTableColumnId } from '@/utils/enum';
 import { Button } from '@/components/ui/button';
+import { formatPhoneNumber } from '@/utils/format';
 
 export const tableUsersColumns: ColumnDef<IUser>[] = [
     {
@@ -61,13 +62,11 @@ export const tableUsersColumns: ColumnDef<IUser>[] = [
     },
     {
         accessorKey: EUserTableColumnId.USERNAME,
-        header: 'Username',
         enableHiding: true, // Cho phép ẩn cột
         filterFn: filterBySelect,
     },
     {
         accessorKey: EUserTableColumnId.USER_ID,
-        header: 'User ID',
         enableHiding: true,
         filterFn: filterByInput,
     },
@@ -88,27 +87,31 @@ export const tableUsersColumns: ColumnDef<IUser>[] = [
                 </Button>
             );
         },
+
         cell: ({ row }) => {
-            const formatPhoneNumber = (phone: number) => {
-                const phoneStr = phone.toString();
-                const match = phoneStr.match(/^(\d{3})(\d{3})(\d{4})$/);
-                if (match) {
-                    return `(${match[1]}) ${match[2]}-${match[3]}`;
-                }
-                return phoneStr;
-            };
             const { phone, email } = row.original;
             return (
                 <div className="flex flex-col text-[#111928] h-11 justify-between">
-                    <span>{formatPhoneNumber(phone)}</span>
+                    <span>{formatPhoneNumber(phone.toString())}</span>
                     <span>{email}</span>
                 </div>
             );
         },
     },
     {
+        accessorKey: EUserTableColumnId.PHONE,
+        enableHiding: true, // Cho phép ẩn cột
+        filterFn: filterByInput,
+    },
+    {
+        accessorKey: EUserTableColumnId.EMAIL_ADDRESS,
+        enableHiding: true,
+        filterFn: filterByInput,
+    },
+    {
         accessorKey: EUserTableColumnId.TYPE,
         header: 'Type',
+        filterFn: filterBySelect,
     },
     {
         accessorKey: EUserTableColumnId.EXPERIENCE,
@@ -138,7 +141,7 @@ export const tableUsersColumns: ColumnDef<IUser>[] = [
             return (
                 <span
                     className={cn(
-                        '!h-5 px-2.5 p-2.5 bg-[#F6FFED] rounded-sm flex items-center uppercase w-fit',
+                        '!h-5 px-2.5 p-2.5 bg-[#F6FFED] rounded-sm flex items-center uppercase w-fit font-medium',
                         status === 'Inactive' ? 'text-red-300' : 'text-[#43A047]',
                     )}
                 >
@@ -218,7 +221,7 @@ export const tableLoanDocumentsColumns: ColumnDef<ILoan>[] = [
         cell: ({ row }) => {
             const { status } = row.original;
             return (
-                <div className="!h-5 px-2.5 text-xs text-[#2979FF] bg-[#E6F7FF] rounded-sm flex items-center uppercase">
+                <div className="!h-5 px-2.5 text-xs text-[#2979FF] bg-[#E6F7FF] rounded-sm flex items-center uppercase w-fit font-medium">
                     {status}
                 </div>
             );

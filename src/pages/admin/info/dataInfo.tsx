@@ -1,8 +1,9 @@
 import { BooksIcon, ChartIcon, ClipBoardIcon, FilesIcon, NotePencilIcon, PercentIcon } from '@/assets/svgs';
+import { ESectionInfo } from '@/utils/enum';
 
 export const dataInfo = [
     {
-        type: 'general',
+        type: ESectionInfo.GENERAL,
         label: 'GENERAL INFORMATION',
         icon: <BooksIcon />,
         defaultOpen: true,
@@ -12,10 +13,14 @@ export const dataInfo = [
             { label: 'Last Name', value: 'Nguyen' },
             { label: 'Experience', value: '5 years' },
             { label: 'Personal Website', value: 'david.com' },
+            { label: 'First Name', value: 'David' },
+            { label: 'Last Name', value: 'Nguyen' },
+            { label: 'Experience', value: '5 years' },
+            { label: 'Personal Website', value: 'david.com' },
         ],
     },
     {
-        type: 'structures',
+        type: ESectionInfo.STRUCTURES,
         label: 'COMMISSION STRUCTURES',
         icon: <PercentIcon />,
         defaultOpen: false,
@@ -26,7 +31,7 @@ export const dataInfo = [
         },
     },
     {
-        type: 'recruitment',
+        type: ESectionInfo.RECRUITMENT,
         label: 'RECRUITMENT DOCUMENTS',
         icon: <ClipBoardIcon />,
         defaultOpen: false,
@@ -37,20 +42,20 @@ export const dataInfo = [
         },
     },
     {
-        type: 'loanDocuments',
+        type: ESectionInfo.LOAN_DOCUMENTS,
         label: 'RELATED CLIENTS & LOAN DOCUMENTS',
         icon: <FilesIcon />,
         defaultOpen: true,
         collapseDisable: false,
     },
     {
-        type: 'performance',
+        type: ESectionInfo.PERFORMANCE,
         label: 'PERFORMANCE',
         icon: <ChartIcon />,
         defaultOpen: false,
     },
     {
-        type: 'todo',
+        type: ESectionInfo.TO_DO,
         label: 'TO-DO',
         icon: <NotePencilIcon />,
         defaultOpen: true,

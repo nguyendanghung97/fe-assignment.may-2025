@@ -40,7 +40,8 @@ const AppSidebar = ({ ...props }) => {
             </SidebarHeader>
             <SidebarContent
                 className={cn(
-                    'font-[IBM_Plex_Sans] pt-8 pb-5 justify-between gap-14 scroll-hide',
+                    "font-['IBM_Plex_Sans']",
+                    'pt-8 pb-5 justify-between gap-14 scroll-hide',
                     state === 'collapsed' ? 'px-5' : 'px-4',
                 )}
             >

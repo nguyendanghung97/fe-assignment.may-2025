@@ -3,12 +3,12 @@ import Header from './Header';
 
 const Layout = () => {
     return (
-        <div className="w-fit">
+        <>
             <Header />
-            <main className="w-fit">
+            <main>
                 <Outlet />
             </main>
-        </div>
+        </>
     );
 };
 

@@ -15,9 +15,11 @@ import {
     type ColumnFiltersState,
     type SortingState,
 } from '@tanstack/react-table';
-import SectionFilter from './filter';
 import InfoSections from './info';
 import { useSyncTableWithUrlParams } from '@/hooks/useSyncTableWithUrlParams';
+import AppFilter from '@/components/common/AppFilter';
+import { EFormType, EUserTableColumnId } from '@/utils/enum';
+import { Button } from '@/components/ui/button';
 
 export const INITIAL_PAGE_SIZE = 5;
 
@@ -51,23 +53,45 @@ const Page = () => {
 
     return (
         <div className="flex">
-            <section className="w-64 p-4 relative shrink-0">
-                <SectionFilter table={userTable} className="flex flex-col gap-4" />
+            <section className="w-52 lg:w-64 p-4 relative shrink-0 hidden md:flex flex-col justify-between gap-4">
+                <AppFilter
+                    className="flex flex-col gap-4"
+                    table={userTable}
+                    fields={[
+                        { id: EUserTableColumnId.USERNAME, label: 'User name', type: EFormType.SELECT },
+                        { id: EUserTableColumnId.USER_ID, label: 'User ID', type: EFormType.INPUT },
+                        { id: EUserTableColumnId.TYPE, label: 'User type', type: EFormType.SELECT },
+                        { id: EUserTableColumnId.PHONE, label: 'Phone number', type: EFormType.INPUT },
+                        { id: EUserTableColumnId.EMAIL_ADDRESS, label: 'Email address', type: EFormType.INPUT },
+                        { id: EUserTableColumnId.STATUS, label: 'Status', type: EFormType.RADIO },
+                    ]}
+                />
+                <Button
+                    variant="outline"
+                    className="text-sm font-medium text-[#4A4B57] h-8"
+                    onClick={() => {
+                        console.log('allVisibleUsers', allVisibleUsers);
+                    }}
+                >
+                    Export Data
+                </Button>
                 <Separator className="absolute right-0 top-0" orientation="vertical" />
             </section>
-            <section className="min-h-[calc(100dvh-4rem)] flex flex-col">
-                <div className="py-0.5">
-                    <h3 className="h-14 px-4 flex items-center gap-2.5 text-xl text-[#294172] font-bold">
-                        {allVisibleUsers.length} USERS <ArrowsClockWiseICon />
-                    </h3>
-                </div>
-                <Separator />
-                <DataTable table={userTable} showPagination />
-            </section>
-            <section className="flex-1 relative">
-                <Separator className="absolute" orientation="vertical" />
-                <InfoSections />
-            </section>
+            <div className="flex-1 flex min-h-[calc(100dvh-4rem)] overflow-x-hidden">
+                <section className="flex-1 overflow-hidden flex flex-col">
+                    <div className="py-0.5">
+                        <h3 className="h-14 px-4 flex items-center gap-2.5 text-xl text-[#294172] font-bold">
+                            {allVisibleUsers.length} USERS <ArrowsClockWiseICon />
+                        </h3>
+                    </div>
+                    <Separator />
+                    <DataTable table={userTable} showPagination />
+                </section>
+                <section className="hidden lg:block flex-1 overflow-hidden relative">
+                    <Separator className="absolute" orientation="vertical" />
+                    <InfoSections />
+                </section>
+            </div>
         </div>
     );
 };

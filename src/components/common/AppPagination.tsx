@@ -41,7 +41,7 @@ const AppPagination = ({ className, table, initialPageSize = INITIAL_PAGE_SIZE }
     const pages = getPaginationPages(totalPages, currentPage);
     const pageSizes = [1, 2, 3].map((n) => n * initialPageSize);
     return (
-        <div className={cn('flex py-3.5 px-4 text-[#637381]', className)}>
+        <div className={cn('flex gap-6 py-3.5 px-4 text-[#637381]', className)}>
             <Pagination>
                 <PaginationContent className="gap-2.5">
                     <PaginationItem>

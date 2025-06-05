@@ -32,8 +32,10 @@ import PercentIcon from './percent.svg';
 import ArrowsClockWiseICon from './arrows-clockwise.svg';
 import FileTextICon from './file-text.svg';
 import ChevronLeftIcon from './chevron-left.svg';
+import FilterIcon from './filter.svg';
 
 export {
+    FilterIcon,
     ChevronLeftIcon,
     FileTextICon,
     ArrowsClockWiseICon,
