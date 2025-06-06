@@ -21,7 +21,7 @@ const AppSidebar = ({ ...props }) => {
     // onClick={() => setOpen(!open)}
 
     return (
-        <Sidebar collapsible="icon" {...props}>
+        <Sidebar collapsible="icon" {...props} className={cn(state === 'collapsed' ? 'mr-6' : 'mr-0')}>
             <SidebarHeader className="pt-6 px-4">
                 <SidebarMenu>
                     <SidebarMenuItem className="flex items-center gap-4">
@@ -41,7 +41,7 @@ const AppSidebar = ({ ...props }) => {
             <SidebarContent
                 className={cn(
                     "font-['IBM_Plex_Sans']",
-                    'pt-8 pb-5 justify-between gap-14 scroll-hide',
+                    'pt-10 pb-5 justify-between gap-14 scroll-hide',
                     state === 'collapsed' ? 'px-5' : 'px-4',
                 )}
             >

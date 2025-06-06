@@ -18,7 +18,7 @@ const publicRoutes = [
     },
     {
         layout: React.lazy(() => import('@/layouts/admin')),
-        child: [{ path: configs.routes.admin, component: React.lazy(() => import('@/pages/admin')) }],
+        child: [{ path: configs.routes.admin, component: React.lazy(() => import('@/pages/user-management')) }],
     },
 ];
 

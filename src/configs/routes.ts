@@ -8,7 +8,7 @@ const routes: Record<string, any> = {
     ticket: '/projects/ticket-detail',
     administrations: '/administrations',
     documentation: 'documentation',
-    admin: '/admin',
+    admin: '/user-management',
 };
 
 export default routes;

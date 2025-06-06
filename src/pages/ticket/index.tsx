@@ -40,10 +40,10 @@ const propsData = [
 
 const Page = () => {
     return (
-        <>
+        <div className="flex flex-col h-full">
             <AppBreadcrumd data={breadcrumdData} />
             <Separator />
-            <div className="flex justify-between">
+            <div className="flex justify-between h-full">
                 <div className="flex-1 pr-4">
                     <section>
                         <SectionHeader icon={<EBookIcon />} title="Description" />
@@ -77,16 +77,18 @@ const Page = () => {
                                 return (
                                     <li key={index} className="truncate">
                                         <div className="flex items-center gap-2 text-sm leading-6">
-                                            <span className="w-5 flex justify-center">
+                                            <span className="w-5 flex justify-center items-center">
                                                 <CircelFillIcon
                                                     className={cn(
                                                         index % 2 === 0 ? 'text-[#22AD5C]' : 'text-[#005A86]',
                                                     )}
                                                 />
                                             </span>
-                                            <span>{act.activity}</span>
-                                            <ClockIcon className="shrink-0" />
-                                            <span className="">{act.time}</span>
+                                            <div className="flex items-center gap-2 text-[#6F6F6F]">
+                                                <span>{act.activity}</span>
+                                                <ClockIcon />
+                                                <span className="">{act.time}</span>
+                                            </div>
                                         </div>
                                         {!isLast && (
                                             <div className="w-5 h-5 flex justify-center">
@@ -102,15 +104,15 @@ const Page = () => {
                             <Button
                                 variant="ghost"
                                 size="icon"
-                                className="text-[#005B86] absolute right-1.5 bottom-0 cursor-pointer hover:text-[#005B86]/70 hover:bg-transparent"
+                                className="text-[#005B86] absolute right-2 bottom-0 cursor-pointer hover:text-[#005B86]/70 hover:bg-transparent"
                             >
                                 <ArrowUpIcon className="" />
                             </Button>
                         </div>
                     </section>
                 </div>
+                <Separator orientation="vertical" />
                 <div className="w-72">
-                    <Separator className="absolute" orientation="vertical" />
                     <div className="px-4 h-10 flex items-center justify-between">
                         <div className="flex items-center gap-2">
                             <h3 className="text-base">Properties</h3>
@@ -141,7 +143,7 @@ const Page = () => {
                     </ul>
                 </div>
             </div>
-        </>
+        </div>
     );
 };
 

@@ -49,7 +49,7 @@
 }
 
 body {
-    @apply font-[Inter] text-[var(--text-color)];
+    @apply font-['Inter'];
     /* color: var(--text-color); */
 }
 

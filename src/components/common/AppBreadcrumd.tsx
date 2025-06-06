@@ -2,8 +2,19 @@ import { Fragment } from 'react/jsx-runtime';
 import { Breadcrumb, BreadcrumbItem, BreadcrumbList, BreadcrumbPage, BreadcrumbSeparator } from '../ui/breadcrumb';
 import { Link } from 'react-router-dom';
 import { cn } from '@/lib/utils';
+import React from 'react';
 
-const AppBreadcrumd = ({ data, className, ...props }: Type) => {
+type AppBreadcrumdProps = {
+    data: IBreadcrumd[];
+    className?: string;
+};
+
+export type IBreadcrumd = {
+    title: string;
+    url: string;
+};
+
+const AppBreadcrumd = ({ data, className, ...props }: AppBreadcrumdProps) => {
     return (
         <>
             <Breadcrumb className={cn('py-0.5', className)} {...props}>
@@ -23,7 +34,7 @@ const AppBreadcrumd = ({ data, className, ...props }: Type) => {
                                         </Link>
                                     )}
                                 </BreadcrumbItem>
-                                {!isLast && <BreadcrumbSeparator className="[&>svg]:size-4" />}
+                                {!isLast && <BreadcrumbSeparator className="[&>svg]:size-3.5" />}
                             </Fragment>
                         );
                     })}
@@ -33,14 +44,4 @@ const AppBreadcrumd = ({ data, className, ...props }: Type) => {
     );
 };
 
-export default AppBreadcrumd;
-
-type Type = {
-    data: IBreadcrumd[];
-    className?: string;
-};
-
-export type IBreadcrumd = {
-    title: string;
-    url: string;
-};
+export default React.memo(AppBreadcrumd);

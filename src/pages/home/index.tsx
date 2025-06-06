@@ -4,7 +4,7 @@ const Home = () => {
     return (
         <div>
             Home
-            <a href={configs.routes.overview} target="_blank">
+            <a href={configs.routes.ticket} target="_blank">
                 BT1
             </a>
             <a href="">BT2</a>

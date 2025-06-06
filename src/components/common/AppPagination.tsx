@@ -9,7 +9,7 @@ import {
     PaginationPrevious,
 } from '../ui/pagination';
 import { Select, SelectContent, SelectGroup, SelectItem, SelectTrigger, SelectValue } from '../ui/select';
-import { INITIAL_PAGE_SIZE } from '@/pages/admin';
+import { INITIAL_PAGE_SIZE } from '@/pages/user-management';
 
 type AppPaginationProps = {
     className?: string;

@@ -2,8 +2,11 @@ import React from 'react';
 import { Outlet } from 'react-router-dom';
 import AppSidebar from './app-sidebar';
 import { SidebarProvider, SidebarTrigger } from '@/components/ui/sidebar';
+import { useIsMobile } from '@/hooks/use-mobile';
+import { cn } from '@/lib/utils';
 
 const Layout = () => {
+    const isMobile = useIsMobile();
     return (
         <SidebarProvider
             style={
@@ -14,11 +17,9 @@ const Layout = () => {
             }
         >
             <AppSidebar />
-            <main className="flex-1 pt-2 md:pt-5 pl-5 pb-4 pr-4">
-                <SidebarTrigger className="fixed right-0 top-0 md:hidden cursor-pointer" />
-                <div className="pl-0.5">
-                    <Outlet />
-                </div>
+            <main className="flex-1 pt-2 md:pt-5 pb-4 pl-5 pr-2 text-[#7C7C7C]">
+                <SidebarTrigger className={cn('fixed right-0 top-0 cursor-pointer', isMobile ? 'block' : 'hidden')} />
+                <Outlet />
             </main>
         </SidebarProvider>
     );

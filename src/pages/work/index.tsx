@@ -1,4 +1,4 @@
-import { ChevronRightIcon, ListIcon, PackageIcon, SearchIcon } from '@/assets/svgs';
+import { ArrowRightICon, ChevronRightIcon, ListIcon, PackageIcon, SearchIcon } from '@/assets/svgs';
 import AppBreadcrumd, { type IBreadcrumd } from '@/components/common/AppBreadcrumd';
 import { Button } from '@/components/ui/button';
 import {
@@ -11,10 +11,11 @@ import {
     CardTitle,
 } from '@/components/ui/card';
 import { Input } from '@/components/ui/input';
-import { Pagination, PaginationContent, PaginationItem, PaginationNext } from '@/components/ui/pagination';
+import { Pagination, PaginationContent, PaginationItem } from '@/components/ui/pagination';
 import { Separator } from '@/components/ui/separator';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import configs from '@/configs';
+import { useIsMobile } from '@/hooks/use-mobile';
 import { cn } from '@/lib/utils';
 import { useMemo, useState } from 'react';
 
@@ -41,6 +42,7 @@ const tabs = [
 ];
 
 const Page = () => {
+    const isMobile = useIsMobile();
     const [activeTab, setActiveTab] = useState(tabs[0].value);
     const [activeSubTab, setActiveSubTab] = useState(tabs[0].subTabs[0].value);
 
@@ -53,17 +55,19 @@ const Page = () => {
         <>
             <div className="flex justify-between">
                 <AppBreadcrumd className="shrink-0" data={dataBrc} />
-                <Button className="hidden sm:flex h-10 !px-4 bg-[var(--primary-color)] gap-2.5 rounded-4xl">
-                    <ListIcon />
-                    View Summary
-                </Button>
+                {!isMobile && (
+                    <Button className="hidden sm:flex h-10 !px-4 bg-[var(--primary-color)] hover:bg-[var(--primary-color)]/90 gap-2.5 rounded-4xl text-base font-medium">
+                        <ListIcon />
+                        View Summary
+                    </Button>
+                )}
             </div>
 
             <Separator />
-            <div className="pl-11">
+            <div className="pl-12 pr-24">
                 <h3 className="pt-4 pb-8 text-xl font-medium leading-8 text-gray-800">Work Packages (WP)</h3>
                 <div className="sm:flex">
-                    <section className="pr-2 pb-5 sm:pb-0 max-w-52 sm:min-h-screen">
+                    <section className="pr-2 pb-5 sm:pb-0 w-52 sm:min-h-screen">
                         <div className="pr-3 h-full flex flex-col">
                             <Tabs
                                 value={activeTab}
@@ -143,17 +147,16 @@ const Page = () => {
                             <SearchIcon className="absolute left-4 h-full" />
                             <Input className="h-8 px-9" />
                         </div>
-                        <div className="pt-4 ">
+
+                        <div className="pt-4">
+                            <div className="grid lg:grid-cols-2 xl:grid-cols-3 gap-x-6 gap-y-4"></div>
                             {packages.length > 0 ? (
                                 <>
                                     <div className="grid lg:grid-cols-2 xl:grid-cols-3 gap-x-6 gap-y-4">
                                         {packages.map((_, index) => (
-                                            <Card
-                                                key={index}
-                                                className="max-w-[296px] p-3 rounded-sm shadow-none gap-4 min-w-fit"
-                                            >
+                                            <Card key={index} className="p-3 rounded-sm shadow-none gap-4">
                                                 <CardHeader className="flex items-center justify-between">
-                                                    <CardTitle className="text-[18px]">
+                                                    <CardTitle className="text-[18px] text-[#000000] font-medium">
                                                         Work package {index + 1}
                                                     </CardTitle>
                                                     <ChevronRightIcon className="text-sm" />
@@ -182,7 +185,7 @@ const Page = () => {
                                                     <CardAction className="flex">
                                                         <Button
                                                             variant="secondary"
-                                                            className="h-9 text-[var(--primary-color)] bg-[#F3F4F6] mr-4"
+                                                            className="h-8 text-base font-medium text-[var(--primary-color)] bg-[#F3F4F6] mr-4"
                                                         >
                                                             View Detail
                                                         </Button>
@@ -195,7 +198,13 @@ const Page = () => {
                                     <Pagination className="mt-36 justify-end">
                                         <PaginationContent>
                                             <PaginationItem>
-                                                <PaginationNext className="text-[var(--primary-color)] gap-2 border border-[var(--primary-color)] hover:text-[var(--primary-color)]" />
+                                                <Button
+                                                    variant="outline"
+                                                    className="text-[var(--primary-color)] border-[var(--primary-color)] hover:text-[var(--primary-color)] text-base h-8 px-3"
+                                                >
+                                                    Next
+                                                    <ArrowRightICon width={10} height={10} />
+                                                </Button>
                                             </PaginationItem>
                                         </PaginationContent>
                                     </Pagination>
