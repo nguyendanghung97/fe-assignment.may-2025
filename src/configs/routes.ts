@@ -9,6 +9,7 @@ const routes: Record<string, any> = {
     administrations: '/administrations',
     documentation: 'documentation',
     admin: '/user-management',
+    form: '/form',
 };
 
 export default routes;

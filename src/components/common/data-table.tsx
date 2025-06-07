@@ -3,6 +3,7 @@ import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '.
 import { flexRender, type Table as ReactTableInstance } from '@tanstack/react-table';
 import AppPagination from './AppPagination';
 import { useEffect } from 'react';
+import { Separator } from '../ui/separator';
 
 interface DataTableProps<TData> {
     className?: string;
@@ -62,6 +63,7 @@ const DataTable = <TData,>({ table, className, showPagination = false, initialPa
             {showPagination && (
                 <>
                     <div className="flex-1"></div>
+                    <Separator />
                     <AppPagination table={table} initialPageSize={initialPageSize} />
                 </>
             )}

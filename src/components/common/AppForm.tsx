@@ -6,6 +6,7 @@ import { Input } from '../ui/input';
 import { Button } from '../ui/button';
 import { z } from 'zod';
 import { zodResolver } from '@hookform/resolvers/zod';
+import { cn } from '@/lib/utils';
 
 const FormSchema = z.object({
     username: z.string().min(1, 'This field is required'),
@@ -19,7 +20,7 @@ const FormSchema = z.object({
     phone: z.coerce.number().min(1, 'This field is required'),
 });
 
-const AppForm = ({ fields, ...props }: Type) => {
+const AppForm = ({ className, fields, ...props }: Type) => {
     const form = useForm<z.infer<typeof FormSchema>>({
         resolver: zodResolver(FormSchema),
         defaultValues: {
@@ -35,7 +36,7 @@ const AppForm = ({ fields, ...props }: Type) => {
     };
     return (
         <Form {...form} {...props}>
-            <form onSubmit={form.handleSubmit(onSubmit)}>
+            <form onSubmit={form.handleSubmit(onSubmit)} className={cn(className)}>
                 {fields.map((fieldData, index) => (
                     <FormField
                         key={index}
@@ -85,6 +86,7 @@ export default AppForm;
 
 type Type = {
     fields: IField[];
+    className?: string;
 };
 
 export type IField = {

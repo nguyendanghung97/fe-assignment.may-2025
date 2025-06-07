@@ -3,6 +3,7 @@ import React from 'react';
 
 const publicRoutes = [
     { path: configs.routes.home, component: React.lazy(() => import('@/pages/home')) },
+    { path: configs.routes.form, component: React.lazy(() => import('@/pages/dynamicForm')) },
     {
         layout: React.lazy(() => import('@/layouts/member')),
         child: [
