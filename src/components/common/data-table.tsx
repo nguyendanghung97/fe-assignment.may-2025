@@ -23,8 +23,8 @@ const DataTable = <TData,>({ table, className, showPagination = false, initialPa
         });
     }, [table]);
     return (
-        <div className={cn('h-full flex flex-col', className)}>
-            <Table className="border text-sm text-[#111928] w-full">
+        <div className={cn('flex flex-col', className)}>
+            <Table className="border text-sm text-[#111928]">
                 <TableHeader className="h-[52px] bg-[#DAE6EF] text-[#111928]">
                     {table.getHeaderGroups().map((headerGroup) => (
                         <TableRow key={headerGroup.id}>

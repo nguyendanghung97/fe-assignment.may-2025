@@ -39,3 +39,22 @@ export enum ESectionInfo {
     PERFORMANCE = 'performance',
     TO_DO = 'todo',
 }
+
+export enum ECustomerColumn {
+    SELECT = 'Select',
+    INDEX = 'Index',
+    CUSTOMER_ID = 'Customer Id',
+    CITY = 'City',
+    COMPANY = 'Company',
+    COUNTRY = 'Country',
+    FULL_NAME = 'Full Name',
+    FIRST_NAME = 'First Name',
+    LAST_NAME = 'Last Name',
+    EMAIL = 'Email',
+    PHONE_1 = 'Phone 1',
+    PHONE_2 = 'Phone 2',
+    SUBSCRIPTION_DATE = 'Subscription Date',
+    WEBSITE = 'Website',
+    LOCATION = 'Location',
+    CONTACT = 'Contact',
+}

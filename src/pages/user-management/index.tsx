@@ -88,7 +88,7 @@ const Page = () => {
                         </h3>
                     </div>
                     <Separator />
-                    <DataTable table={userTable} showPagination />
+                    <DataTable className="h-full" table={userTable} showPagination />
                 </section>
                 <section className="hidden lg:block flex-1 overflow-hidden relative">
                     <Separator className="absolute" orientation="vertical" />

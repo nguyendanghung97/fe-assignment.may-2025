@@ -100,7 +100,7 @@ const AppFilter = <TData,>({ className, table, fields }: AppFilterProps<TData>) 
     return (
         <div className={cn('w-full', className)}>
             <div className="py-2.5 flex items-center justify-between relative">
-                <h3 className="text-base font-medium">FILTER</h3>
+                <h3 className="text-base font-medium text-[#767676]">FILTER</h3>
                 <FilterIcon />
                 <Separator className="absolute bottom-0" />
             </div>

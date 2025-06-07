@@ -2,6 +2,7 @@ import { ALL_VALUE } from '@/components/common/AppFilter';
 import type { Row } from '@tanstack/react-table';
 
 export const filterByInput = <TData>(row: Row<TData>, id: string, value: string): boolean => {
+    console.log(row.getValue<string>(id));
     if (!value) return true;
     const rowValue = row.getValue<string>(id);
     // Nếu là dạng số (điện thoại)

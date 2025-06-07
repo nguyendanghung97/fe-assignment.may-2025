@@ -8,7 +8,7 @@ const Home = () => {
                 BT1
             </a>
             <a href={configs.routes.form}>BT2</a>
-            <a href={configs.routes.admin}>BT3</a>
+            <a href={configs.routes.table}>BT3</a>
         </div>
     );
 };

@@ -7,3 +7,6 @@ export const formatPhoneNumber = (phone?: string) => {
     }
     return phone;
 };
+
+export const normalizePhone = (phone: string | number | null | undefined) =>
+    (phone ?? '').toString().replace(/\D/g, ''); // Loại bỏ mọi ký tự không phải số
