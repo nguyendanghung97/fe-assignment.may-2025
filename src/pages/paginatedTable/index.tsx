@@ -47,12 +47,6 @@ const Page = () => {
 
     const allVisibleUsers = customersTable.getPrePaginationRowModel().rows.map((row) => row.original);
 
-    console.log({
-        pageIndex: customersTable.getState().pagination.pageIndex,
-        pageCount: customersTable.getPageCount(),
-        rowCount: customersTable.getFilteredRowModel().rows.length,
-    });
-
     return (
         <div className="flex">
             <section className="w-1/5 p-4 relative shrink-0 hidden md:flex flex-col justify-between gap-4">

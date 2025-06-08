@@ -65,12 +65,12 @@ export const tableCostumerColumns: ColumnDef<ICustomer>[] = [
             return `${firstName} ${lastName}`;
         },
 
-        filterFn: (row, columnId, filterValue) => {
+        filterFn: (row, _columnId, filterValue) => {
             const data = row.original;
             const firstName = data[ECustomerColumn.FIRST_NAME] ?? '';
             const lastName = data[ECustomerColumn.LAST_NAME] ?? '';
             const fullName = `${firstName} ${lastName}`.toLowerCase();
-            return fullName.includes(filterValue.toLowerCase());
+            return fullName.includes(String(filterValue).toLowerCase());
         },
     },
     {
