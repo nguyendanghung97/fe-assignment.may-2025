@@ -64,9 +64,9 @@ const Page = () => {
 
     return (
         <div className="py-4 px-10 gap-5">
-            <Label className="text-4xl justify-center font-bold py-3">Dynamic Form App</Label>
-            <div className="flex gap-5">
-                <div className="w-1/2 flex flex-col gap-5 justify-between">
+            <Label className="text-4xl justify-center font-bold py-3 text-nowrap">Dynamic Form App</Label>
+            <div className="md:flex gap-5">
+                <div className="basis-1/2 flex flex-col gap-5 justify-between">
                     <div className="flex flex-col gap-2.5">
                         <Label htmlFor="schema">JSON Schema Input</Label>
                         <Textarea
@@ -93,7 +93,7 @@ const Page = () => {
                         </div>
                     </div>
                 </div>
-                <div className="w-1/2">
+                <div className="basis-1/2 mt-7 md:mt-0">
                     {parsedSchema ? (
                         <div className="flex flex-col items-center">
                             {Object.entries(parsedSchema.properties).map(([key, prop]: any) => {
