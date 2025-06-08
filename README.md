@@ -1,3 +1,7 @@
+# FE Assignment - Dang Hung Nguyen
+
+-   A ReactJS assignment for Junior Front-End Developer position · [Live Demo](https://fe-assignment-nguyen-dang-hung.vercel.app)
+
 # Junior Front-end Engineer Assignment - May 2025
 
 -   Copyright (c) River Flow Solutions, Jsc. 2025. All rights reserved.
